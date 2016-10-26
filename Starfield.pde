@@ -2,7 +2,7 @@ Particle[] stars;
 void setup()
 {
 	size(700,500);
-	frameRate(20);
+	frameRate(12);
 	stars = new Particle[1000];
 	for (int i = 0; i < stars.length; i++)
 	{
