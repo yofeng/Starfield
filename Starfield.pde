@@ -2,7 +2,7 @@ Particle[] stars;
 void setup()
 {
 	size(700,500);
-	frameRate(40);
+	frameRate(20);
 	stars = new Particle[1000];
 	for (int i = 0; i < stars.length; i++)
 	{
@@ -44,7 +44,7 @@ class NormalParticle implements Particle
 	public void show()
 	{
 		fill(r,g,b);
-		ellipse((float)myX, (float)myY, 8, 8);
+		ellipse((float)myX, (float)myY, 5, 3);
 	}
 }
 interface Particle
@@ -59,8 +59,8 @@ class OddballParticle implements Particle
 	OddballParticle()
 	{
 		b = (int)(Math.random()*200)+55;
-		myX = (Math.random()*100)+350;
-		myY = (Math.random()*100)+350;
+		myX = (Math.random()*100)+150;
+		myY = (Math.random()*100)+250;
 		speed = (Math.random()*4);
 		dtheta = (Math.random()*2)*Math.PI/2;
 	}
@@ -72,8 +72,10 @@ class OddballParticle implements Particle
 	}
 	void show()
 	{
-		fill(100,3,b);
-		rect((float)myX, (float)myY, 50, 68);
+		fill(100,50,b);
+		rect((float)myX, (float)myY, 50, 68, 15);
+		fill(0);
+		ellipse((float)myX + 26, (float)myY +33, 23, 30);
 	}
 }
 class JumboParticle extends NormalParticle
@@ -83,11 +85,12 @@ class JumboParticle extends NormalParticle
 	JumboParticle()
 	{
 		r = (int)(Math.random()*225)+30;
+		g = (int)(Math.random()*200)-55;
 		b = (int)(Math.random()*200)+55;
-		myX = (Math.random()*100)+350;
-		myY = (Math.random()*100)+350;
+		myX = (Math.random()*100)+150;
+		myY = (Math.random()*100)+250;
 		speed = (Math.random()*5)+1;
-		dtheta = (Math.random()*2)*Math.PI/2;
+		dtheta = (Math.random()*2)*Math.PI/5;
 	}
 
 	void move()
@@ -97,8 +100,8 @@ class JumboParticle extends NormalParticle
 	}
 	void show()
 	{
-		fill(r,0,b);
-		ellipse((float)myX, (float)myY, 15, 17);
+		fill(r,g,b);
+		ellipse((float)myX, (float)myY, 25, 25);
 	}
 }
 
